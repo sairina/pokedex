@@ -14,6 +14,7 @@ function Pokegame(props) {
     hand1.push(randPokemon);
   }
 
+  //accumulator is exp, and we're adding base_experience to the total of exp
   let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
   let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
 
