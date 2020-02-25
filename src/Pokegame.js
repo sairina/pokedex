@@ -1,18 +1,28 @@
-import React = 'react';
+import React from 'react';
 import Pokedex from './Pokedex';
 
-function Pokegame() {
-  let player1 = [];
-  let player2 = [...props.pokemon];
+function Pokegame(props) {
+  let hand1 = [];
+  let hand2 = [...props.pokemon];
 
-  while(player1.length < player2.length){
-    let randIdx = Math.floor(Math.random() * player2.length);
-    let randPokemon = player2.splice(randIdx, 1)[0];
-    player1.push(randPokemon);
+  // if the length of the arrays are unequal
+  while (hand1.length < hand2.length) {
+    // random pokemon is first/only element of the spliced array
+    // push random pokemon to the first array
+    let randIdx = Math.floor(Math.random() * hand2.length);
+    let randPokemon = hand2.splice(randIdx, 1)[0];
+    hand1.push(randPokemon);
   }
+
+  let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+  let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+
   return (
-    
-  );
+    <div>
+      <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} />
+      <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
+    </div>
+  )
 }
 
 Pokegame.defaultProps = {
