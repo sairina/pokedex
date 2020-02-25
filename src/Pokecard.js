@@ -2,15 +2,16 @@
 import React from 'react';
 import './Pokecard.css';
 
-function Pokecard(props){
-  const { id, name, type, base_experience } = props.pokemon; 
+function Pokecard(props) {
+  const { id, name, type, base_experience } = props.pokemon;
   const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+  
   return (
     <div className="Pokecard">
-      <p className="Pokecard-name">{name}</p>
+      <div className="Pokecard-name">{name}</div>
       <img className="Pokecard-image" src={image} />
-      <p className="Pokecard-type">Type: {type}</p>
-      <p className="Pokecard-experience">EXP: {base_experience}</p>
+      <div className="Pokecard-details">Type: {type}</div>
+      <div className="Pokecard-details">EXP: {base_experience}</div>
     </div>
   );
 }

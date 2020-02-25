@@ -1,11 +1,10 @@
 import React from 'react';
-import './App.css';
-import Pokedex from './Pokedex';
+import Pokegame from './Pokegame';
 
-/**This should just render a single Pokedex. */
+/**This should just render the Pokegame. */
 function App(){
   return (
-    <Pokedex />
+    <Pokegame />
   );
 }
 

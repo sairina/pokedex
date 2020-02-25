@@ -1,7 +1,14 @@
 .Pokedex {
-  list-style: none;
+  text-align: center;
 }
 
-.Pokedex-card {
-  list-style-type: none;
+.Pokedex-header {
+  color: gray;
+}
+
+
+.Pokedex-cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
